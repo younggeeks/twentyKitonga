@@ -21,6 +21,11 @@ class TestController extends Controller
         $this->auth=$auth;
     }
 
+    public function getOwner()
+    {
+        return view("company_profile.company_information");
+    }
+
     public function getIndex()
     {
         return view("welcome");

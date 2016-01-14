@@ -296,6 +296,8 @@ Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB0
         <!-- Page Content -->
         <p></p>
         @yield('contents')
+
+
         <!-- /Page Content -->
 
     </div>

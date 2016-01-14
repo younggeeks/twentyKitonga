@@ -239,6 +239,7 @@
     {{--menu which is to be seen by estimator--}}
     @if(Auth::check() && Auth::user()->company_id!=null &&!Entrust::hasRole("super_admin"))
 
+
             @endif
 
 

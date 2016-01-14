@@ -43,7 +43,10 @@
             <i class="fa fa-info-circle"></i> New member? <a href="{{URL::to("auth/register")}}">Register here.</a></a>
         </div>
         <div class="loginbox-signup">
-            <i class="fa fa-info-circle"></i>Company Owner/Representative? <a href="{{URL::to("auth/register")}}">Register here.</a></a>
+            <i class="fa fa-info-circle"></i> Shop Owner/Representative? <a href="{{URL::to("shop/register")}}">Register here.</a></a>
+        </div>
+        <div class="loginbox-signup">
+            <i class="fa fa-info-circle"></i>Company Owner/Representative? <a href="{{URL::to("company/register")}}">Register here.</a></a>
         </div>
         </form>
     </div>

@@ -13,11 +13,12 @@
 
 use App\User;
 
-Route::get('/', ["middleware"=>"auth",
-    function () {
-        return view('home');
-    }
+Route::get('/',[
+"uses"=>"DashboardController@index",
+    "middleware"=>"auth"
 ]);
+
+
 Route::get('customer',[
     "as"=>"customer-estimations",
     "uses"=>"CustomersController@getEstimations"
@@ -33,6 +34,10 @@ Route::controllers([
 ]);
 
 
+
+
 Route::controller("company","CompanyController");
+Route::controller("shop","ShopsController");
 
 Route::controller("job","JobsController");
+

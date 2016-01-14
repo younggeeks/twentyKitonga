@@ -30,7 +30,7 @@ Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB0
     <link  href="{{asset("assets/css/beyond.min.css")}}" rel="stylesheet" />
     <link href="{{asset("assets/css/demo.min.css")}}" rel="stylesheet" />
     <link href="{{asset("assets/css/animate.min.css")}}" rel="stylesheet" />
-    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+    {{--<link id="skin-link" href="" rel="stylesheet" type="text/css" />--}}
 
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
     <script src="{{asset("assets/js/skins.min.js")}}"></script>
