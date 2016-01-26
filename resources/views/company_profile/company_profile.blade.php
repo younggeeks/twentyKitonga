@@ -16,23 +16,37 @@
                            Company Profile
                         </h1>
                     </div>
-                    <!--Header Buttons-->
-                    <div class="header-buttons">
-                        <a class="sidebar-toggler" href="#">
-                            <i class="fa fa-arrows-h"></i>
-                        </a>
-                        <a class="refresh" id="refresh-toggler" href="">
-                            <i class="glyphicon glyphicon-refresh"></i>
-                        </a>
-                        <a class="fullscreen" id="fullscreen-toggler" href="#">
-                            <i class="glyphicon glyphicon-fullscreen"></i>
-                        </a>
-                    </div>
-                    <!--Header Buttons End-->
+                    {{--<!--Header Buttons-->--}}
+                    {{--<div class="header-buttons">--}}
+                        {{--<a class="sidebar-toggler" href="#">--}}
+                            {{--<i class="fa fa-arrows-h"></i>--}}
+                        {{--</a>--}}
+                        {{--<a class="refresh" id="refresh-toggler" href="">--}}
+                            {{--<i class="glyphicon glyphicon-refresh"></i>--}}
+                        {{--</a>--}}
+                        {{--<a class="fullscreen" id="fullscreen-toggler" href="#">--}}
+                            {{--<i class="glyphicon glyphicon-fullscreen"></i>--}}
+                        {{--</a>--}}
+                    {{--</div>--}}
+                    {{--<!--Header Buttons End-->--}}
                 </div>
                 <!-- /Page Header -->
                 <!-- Page Body -->
                 <div class="page-body">
+
+                    <div class="row">
+                        @if(Session::has("error"))
+                            <div class="alert alert-error">
+                                {{Session::get("error")}}
+                            </div>
+                        @endif
+
+                        @if(Session::has("success"))
+                            <div class="alert alert-success">
+                                {{Session::get("success")}}
+                            </div>
+                        @endif
+                    </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="profile-container">
@@ -42,10 +56,7 @@
                                     </div>
                                     <div class="col-lg-5 col-md-8 col-sm-12 profile-info">
                                         <div class="header-fullname">{{$company->name}}</div>
-                                        <a href="#" class="btn btn-palegreen btn-sm  btn-follow">
-                                            <i class="fa fa-check"></i>
 
-                                        </a>
                                         <div class="header-information">
                                             Company {{$company->name}} was registered in 2013
                                         </div>
@@ -69,11 +80,21 @@
                                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 inlinestats-col">
                                                 <i class="glyphicon glyphicon-map-marker"></i> {{$company->address}}
                                             </div>
+                                            @if($company->status=="approved")
                                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 inlinestats-col">
-                                                <strong>|</strong>
+                                                <strong>Approved</strong>
+
                                             </div>
+                                                @else
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 inlinestats-col">
+                                                <strong><a href="{{URL::to("company/approve",$company->id)}}" class="btn btn-palegreen btn-sm  btn-follow">
+                                                        <i class="fa fa-check"></i>
+
+                                                    </a></strong>
+                                            </div>
+                                            @endif
                                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 inlinestats-col">
-                                                 <strong>|</strong>
+                                                 <strong>| </strong>
                                             </div>
                                         </div>
                                     </div>
@@ -105,76 +126,6 @@
                                             </ul>
                                             <div class="tab-content tabs-flat">
                                                 <div id="overview" class="tab-pane active">
-                                                    {{--<div class="row profile-overview">--}}
-                                                        {{--<div class="col-xs-12 col-md-6">--}}
-                                                            {{--<div class="well with-header  with-footer">--}}
-                                                                {{--<div class="header bg-blue">--}}
-                                                                   {{--Company Overview--}}
-                                                                {{--</div>--}}
-                                                                {{--<table class="table table-hover">--}}
-
-                                                                    {{--<tr>--}}
-                                                                        {{--<th>--}}
-                                                                            {{--#--}}
-                                                                        {{--</th>--}}
-
-                                                                        {{--<td></td>--}}
-                                                                       {{--</tr>--}}
-                                                                    {{--<tr>--}}
-                                                                        {{--<th>--}}
-                                                                            {{--Name--}}
-                                                                        {{--</th>--}}
-
-                                                                    {{--<td>{{$company->name}}</td>--}}
-                                                                    {{--</tr>--}}
-                                                                    {{--<tr>--}}
-                                                                        {{--<th>--}}
-                                                                           {{--Box--}}
-                                                                        {{--</th>--}}
-                                                                        {{--<td>{{$company->box}}</td>--}}
-                                                                    {{--</tr>--}}
-                                                                    {{--<tr>--}}
-                                                                        {{--<th>--}}
-                                                                           {{--Address--}}
-                                                                        {{--</th>--}}
-                                                                        {{--<td>{{$company->address}}</td>--}}
-                                                                    {{--</tr>--}}
-                                                                    {{--<tr>--}}
-                                                                        {{--<th>--}}
-                                                                            {{--Phone--}}
-                                                                        {{--</th>--}}
-                                                                        {{--<td>{{$company->phone}}</td>--}}
-                                                                    {{--</tr>--}}
-
-                                                                    {{--<tr>--}}
-                                                                        {{--<th>--}}
-                                                                            {{--Tin--}}
-                                                                        {{--</th>--}}
-                                                                        {{--<td>{{$company->tin}}</td>--}}
-                                                                    {{--</tr>--}}
-                                                                    {{--<tr>--}}
-                                                                        {{--<th>--}}
-                                                                            {{--Vrn--}}
-                                                                        {{--</th>--}}
-                                                                        {{--<td>{{$company->vrn}}</td>--}}
-                                                                    {{--</tr>--}}
-
-
-                                                                    {{--<tbody>--}}
-
-                                                                    {{--</tbody>--}}
-                                                                {{--</table>--}}
-
-                                                                {{--<div class="footer">--}}
-
-                                                                {{--</div>--}}
-                                                            {{--</div>--}}
-
-                                                        {{--</div>--}}
-
-                                                    {{--</div>--}}
-                                                    {{--for new company overview--}}
-
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="profile-contacts">

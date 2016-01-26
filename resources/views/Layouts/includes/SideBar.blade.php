@@ -117,56 +117,7 @@
             </a>
         </li>
 
-        {{--<!--Pages-->--}}
-        {{--<li>--}}
-        {{--<a href="#" class="menu-dropdown">--}}
-        {{--<i class="menu-icon glyphicon glyphicon-paperclip"></i>--}}
-        {{--<span class="menu-text"> Pages </span>--}}
 
-        {{--<i class="menu-expand"></i>--}}
-        {{--</a>--}}
-        {{--<ul class="submenu">--}}
-        {{--<li>--}}
-        {{--<a href="timeline.html">--}}
-        {{--<span class="menu-text">Timeline</span>--}}
-        {{--</a>--}}
-        {{--</li>--}}
-        {{--<li>--}}
-        {{--<a href="pricing.html">--}}
-        {{--<span class="menu-text">Pricing Tables</span>--}}
-        {{--</a>--}}
-        {{--</li>--}}
-
-        {{--<li>--}}
-        {{--<a href="invoice.html">--}}
-        {{--<span class="menu-text">Invoice</span>--}}
-        {{--</a>--}}
-        {{--</li>--}}
-
-        {{--<li>--}}
-        {{--<a href="login.html">--}}
-        {{--<span class="menu-text">Login</span>--}}
-        {{--</a>--}}
-        {{--</li>--}}
-        {{--<li>--}}
-        {{--<a href="register.html">--}}
-        {{--<span class="menu-text">Register</span>--}}
-        {{--</a>--}}
-        {{--</li>--}}
-        {{--<li>--}}
-        {{--<a href="lock.html">--}}
-        {{--<span class="menu-text">Lock Screen</span>--}}
-        {{--</a>--}}
-        {{--</li>--}}
-        {{--<li>--}}
-        {{--<a href="typography.html">--}}
-        {{--<span class="menu-text"> Typography </span>--}}
-        {{--</a>--}}
-        {{--</li>--}}
-        {{--</ul>--}}
-        {{--</li>--}}
-
-        <!--Right to Left-->
         <li>
             <a href="#" class="menu-dropdown">
                 <i class="menu-icon fa fa-align-right"></i>

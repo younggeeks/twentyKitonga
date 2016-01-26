@@ -54,6 +54,7 @@ Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB0
     <!-- Page Container -->
     <div class="page-container">
 
+
         <!-- Page Sidebar -->
 @include('Layouts.includes.SideBar')
         <!-- /Page Sidebar -->
@@ -295,6 +296,7 @@ Purchase: https://wrapbootstrap.com/theme/beyondadmin-adminapp-angularjs-mvc-WB0
         <!-- /Chat Bar -->
         <!-- Page Content -->
         <p></p>
+
         @yield('contents')
 
 

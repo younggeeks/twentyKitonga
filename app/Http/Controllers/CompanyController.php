@@ -14,9 +14,14 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
+use Zizaco\Entrust\Entrust;
 
 class CompanyController extends Controller
 {
+    public function __construct(Entrust $entrust)
+    {
+        $this->entrust=$entrust;
+    }
     public function getViewCompany()
     {
 
@@ -103,10 +108,33 @@ class CompanyController extends Controller
 
     public function getView($id)
     {
-        $company= $private=Company::where("id",$id)->with(
+        $company=Company::where("id",$id)->with(
             [
                 'customers'=> function($q) {
                     $q->whereNull("user_id");
                 }])->first();
+
+        return view("company_profile.company_profile",[
+            "company"=>$company,
+            "estimators"=>User::where("company_id",$id)->count(),
+            "jobs"=>Job::where("company_id",$id)->count(),
+            "customers"=>$company->customers->count(),
+            "estimatorz"=>User::where("company_id",$id)->get()
+        ]);
+
+    }
+
+
+    public function getApprove($id)
+    {
+        if(!$this->entrust->hasRole("super_admin")){
+            return Redirect::back()->with("error","You are Not authorized to perform This action");
+        }
+
+        $company=Company::find($id);
+        $company->status="approved";
+        $company->save();
+
+        return Redirect::back()->with("success","Company Has Been Approved successfully");
     }
 }
