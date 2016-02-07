@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Company;
 use App\Job;
+use App\Paper;
+use App\PaperPrice;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
@@ -21,6 +23,7 @@ class CompanyController extends Controller
     public function __construct(Entrust $entrust)
     {
         $this->entrust=$entrust;
+
     }
     public function getViewCompany()
     {
@@ -33,6 +36,7 @@ class CompanyController extends Controller
             "customers","jobs"
         ])->first();
 
+        $papers=PaperPrice::where("company_id",$id)->with("paper")->get();
 
 
         return view("company_profile.company_profile",[
@@ -40,7 +44,9 @@ class CompanyController extends Controller
             "estimators"=>User::where("company_id",Auth::user()->company_id)->count(),
             "jobs"=>Job::where("company_id",Auth::user()->company_id)->count(),
             "customers"=>$company->customers->count(),
-            "estimatorz"=>User::where("company_id",Auth::user()->company_id)->get()
+            "estimatorz"=>User::where("company_id",Auth::user()->company_id)->get(),
+            "papers"=>$papers
+
         ]);
     }
 

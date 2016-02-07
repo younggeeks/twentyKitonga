@@ -11,6 +11,7 @@
 |
 */
 
+use App\Company;
 use App\User;
 
 Route::get('/',[
@@ -41,3 +42,10 @@ Route::controller("shop","ShopsController");
 
 Route::controller("job","JobsController");
 
+
+Route::get("angular",function(){
+    $company=Company::where("id",5)->with([
+        "customers","jobs"
+    ])->first();
+    return $company;
+});

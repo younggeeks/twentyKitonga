@@ -227,45 +227,150 @@
                                                     </div>
                                                 </div>
                                                 <div id="contacts" class="tab-pane">
+                                                    {{--<div class="row">--}}
+                                                        {{--<div class="col-md-6">--}}
+                                                            {{--<div class="profile-contacts">--}}
+
+                                                                {{--<div class="profile-badge orange"><i class="fa fa-phone orange"></i><span>Contacts</span></div>--}}
+                                                                {{--<div class="contact-info">--}}
+                                                                    {{--<p>--}}
+                                                                        {{--Phone	: +1 1 2345 6789 <br>--}}
+                                                                        {{--Cell		: +1 9 876 5432--}}
+                                                                    {{--</p>--}}
+                                                                    {{--<p>--}}
+                                                                        {{--Email		: kim@gmail.com--}}
+                                                                        {{--<br>--}}
+                                                                        {{--Skype		: kim.ryder--}}
+                                                                    {{--</p>--}}
+                                                                    {{--<p>--}}
+                                                                        {{--Facebook	: facebook.com/Kim.Ryder--}}
+                                                                        {{--<br>--}}
+                                                                        {{--Twitter	: @KimRyder--}}
+                                                                    {{--</p>--}}
+                                                                {{--</div>--}}
+                                                                {{--<div class="profile-badge azure">--}}
+                                                                    {{--<i class="fa fa-map-marker azure"></i><span>Location</span>--}}
+                                                                {{--</div>--}}
+                                                                {{--<div class="contact-info">--}}
+                                                                    {{--<p>--}}
+                                                                        {{--Address<br>--}}
+                                                                        {{--Department 98<br>--}}
+                                                                        {{--44-46 Morningside Road<br>--}}
+                                                                        {{--Toronto, Canada--}}
+                                                                    {{--</p>--}}
+
+                                                                {{--</div>--}}
+                                                            {{--</div>--}}
+                                                        {{--</div>--}}
+                                                        {{--<div class="col-md-6">--}}
+                                                            {{--<div id="contact-map" class="animated flipInY"></div>--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+
+
+
+
                                                     <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="profile-contacts">
-
-                                                                <div class="profile-badge orange"><i class="fa fa-phone orange"></i><span>Contacts</span></div>
-                                                                <div class="contact-info">
-                                                                    <p>
-                                                                        Phone	: +1 1 2345 6789 <br>
-                                                                        Cell		: +1 9 876 5432
-                                                                    </p>
-                                                                    <p>
-                                                                        Email		: kim@gmail.com
-                                                                        <br>
-                                                                        Skype		: kim.ryder
-                                                                    </p>
-                                                                    <p>
-                                                                        Facebook	: facebook.com/Kim.Ryder
-                                                                        <br>
-                                                                        Twitter	: @KimRyder
-                                                                    </p>
+                                                        <div class="col-xs-12 col-md-12">
+                                                            <div class="widget">
+                                                                <div class="widget-header ">
+                                                                    <span class="widget-caption">List Of Raw Materials By {{$company->name}}</span>
+                                                                    <div class="widget-buttons">
+                                                                        <a href="#" data-toggle="maximize">
+                                                                            <i class="fa fa-expand"></i>
+                                                                        </a>
+                                                                        <a href="#" data-toggle="collapse">
+                                                                            <i class="fa fa-minus"></i>
+                                                                        </a>
+                                                                        <a href="#" data-toggle="dispose">
+                                                                            <i class="fa fa-times"></i>
+                                                                        </a>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="profile-badge azure">
-                                                                    <i class="fa fa-map-marker azure"></i><span>Location</span>
-                                                                </div>
-                                                                <div class="contact-info">
-                                                                    <p>
-                                                                        Address<br>
-                                                                        Department 98<br>
-                                                                        44-46 Morningside Road<br>
-                                                                        Toronto, Canada
-                                                                    </p>
+                                                                <div class="widget-body">
+                                                                    <div class="table-toolbar">
+                                                                        <a  href="#" class="btn btn-default">
+                                                                          <i class="fa fa-plus"></i> Add New Raw Material
+                                                                        </a>
+                                                                        <div class="btn-group pull-right">
+                                                                            <a class="btn btn-default" href="javascript:void(0);">Tools</a>
+                                                                            <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);"><i class="fa fa-angle-down"></i></a>
+                                                                            <ul class="dropdown-menu dropdown-default">
+                                                                                <li>
+                                                                                    <a href="javascript:void(0);">Action</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="javascript:void(0);">Another action</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="javascript:void(0);">Something else here</a>
+                                                                                </li>
+                                                                                <li class="divider"></li>
+                                                                                <li>
+                                                                                    <a href="javascript:void(0);">Separated link</a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                    <table class="table table-striped table-hover table-bordered" id="editabledatatable">
+                                                                        <thead>
+                                                                        <tr role="row">
+                                                                            <th>
+                                                                                Name
+                                                                            </th>
+                                                                            <th>
+                                                                                Weight
+                                                                            </th>
+                                                                            <th>
+                                                                                Color
+                                                                            </th>
+                                                                            <th>
+                                                                                Price
+                                                                            </th>
+                                                                            <th>
 
+                                                                            </th>
+                                                                            <th>
+
+                                                                            </th>
+                                                                        </tr>
+                                                                        </thead>
+
+                                                                        <tbody>
+                                                                        @if(!empty($papers))
+                                                                            @foreach($papers as $paper)
+                                                                        <tr>
+                                                                            <td>{{$paper->paper->name}}</td>
+                                                                            <td>{{$paper->paper->weight}}</td>
+                                                                            <td>{{$paper->paper->color}}</td>
+                                                                            <td>{{number_format($paper->price,2)}} TSH</td>
+                                                                            {{--<td>{{$paper->paper->color}}</td>--}}
+
+                                                                            <td>
+                                                                                <a href="#" class="btn btn-info btn-xs "><i class="fa fa-edit"></i> Edit</a>
+                                                                                <a href="#" class="btn btn-danger btn-xs "><i class="fa fa-trash-o"></i> Delete</a>
+                                                                            </td>
+                                                                        </tr>
+                                                                        @endforeach
+                                                                        @else
+                                                                            No raw Material
+                                                                        @endif
+
+
+                                                                        </tbody>
+                                                                    </table>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-6">
-                                                            <div id="contact-map" class="animated flipInY"></div>
-                                                        </div>
                                                     </div>
+
+
+
+
+
+
+
+
                                                 </div>
                                                 <div id="settings" class="tab-pane">
                                                     <form role="form">
@@ -401,3 +506,10 @@
 
 
 @stop
+
+
+
+
+
+
+
